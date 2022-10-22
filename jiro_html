@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class=title>
+        <h1 class="title_text text_center">ラーメン二郎クイズ</h1>
+    </div>
+    <div class="text_center">
+        <p id = "lebel">難易度</p>
+        <img id="quest" alt="" class="pic">
+    </div>
+    <div class = "option text_center">
+        <input type="radio" name="toi"value="1"><span id="toi1">選択肢1</span>
+        <input type="radio" name="toi"value="2"><span id="toi2">選択肢2</span>
+        <input type="radio" name="toi"value="3"><span id="toi3">選択肢3</span>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+    
+    const qs =["img/1.jpg","img/2.jpg"  ,"img/3.jpg"];
+
+    const level=["レベル<br>★★★（マシマシ）","レベル<br>★（マシ）","レベル<br>★★★★★（鬼マシ）"]
+
+    const toi = [
+        ["関内二郎","荻窪二郎","野猿"],
+        ["富士丸","目黒","三田"],
+        ["小瀧","歌舞伎町","前橋"]
+    ];
+
+    const ans = [1,2,3];
+
+    i=0;
+    $("#quest").attr("src",qs[i]);
+    $("#lebel").html(level[i]);
+    $("#toi1").html(toi[0][i]);
+    $("#toi2").html(toi[i][1]);
+    $("#toi3").html(toi[i][2]);
+
+    $("[name=toi]").on("click",function(){
+        if($(this).val()==ans[i]){
+            alert("正解！")
+        }else{
+            alert("ハズレ");
+        }
+        i++;
+        $("#quest").attr("src",qs[i]);
+        $("#lebel").html(level[i]);
+        $("#toi1").html(toi[i][0]);
+        $("#toi2").html(toi[i][1]);
+        $("#toi3").html(toi[i][2]);
+    });
+    
+    </script> 
+</body>
+</html>
