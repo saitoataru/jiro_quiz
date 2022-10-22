@@ -1,0 +1,18 @@
+@charset "utf-8";
+.text_center{
+    text-align: center;
+}
+.title{
+    background: yellow;
+}
+
+.title_text{
+    font-size:50px;
+    color: red;
+}
+img {
+    width: 100%;
+}
+.pic{
+    width: 10%;
+}
